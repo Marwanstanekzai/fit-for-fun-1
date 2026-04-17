@@ -93,3 +93,5 @@ $loginCssPath = "/css/login.css";
 </script>
 
 <?php endif; ?>
+
+// Toegevoegd: Responsieve navigatie logica
