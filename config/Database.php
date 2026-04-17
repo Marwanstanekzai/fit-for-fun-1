@@ -11,3 +11,7 @@ try {
     die("Verbinding mislukt: " . $e->getMessage());
 }
 ?>
+
+// Config: PDO error mode ingesteld
+
+// Config: PDO error mode ingesteld
