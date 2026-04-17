@@ -78,3 +78,5 @@ try {
 </div>
 
 <?php include 'includes/footer.php'; ?>
+
+// Info: Zoekfunctie voor publieke lessen

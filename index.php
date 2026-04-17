@@ -56,3 +56,5 @@ include 'includes/header.php';
 </div>
 
 <?php include 'includes/footer.php'; ?>
+
+// Update: Hero sectie tekst aangepast

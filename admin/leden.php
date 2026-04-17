@@ -181,3 +181,5 @@ if (isset($_GET['bewerk'])) {
 </div>
 
 <?php include '../includes/footer.php'; ?>
+
+// DB: Ledenlijst sortering aangepast

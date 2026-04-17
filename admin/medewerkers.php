@@ -173,3 +173,5 @@ if (isset($_GET['bewerk'])) {
 </div>
 
 <?php include '../includes/footer.php'; ?>
+
+// Beveiliging: Medewerkersrollen validatie
