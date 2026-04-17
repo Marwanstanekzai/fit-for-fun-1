@@ -189,3 +189,5 @@ if (isset($_GET['bewerk'])) {
 </div>
 
 <?php include '../includes/footer.php'; ?>
+
+// Update: Status van reserveringen beheren
