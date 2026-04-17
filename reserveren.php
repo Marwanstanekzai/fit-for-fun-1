@@ -77,4 +77,4 @@ if ($les_id > 0) {
 
 <?php include 'includes/footer.php'; ?>
 
-// Check: Sessie validatie voor reserveringen
+

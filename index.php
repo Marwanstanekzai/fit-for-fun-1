@@ -57,4 +57,4 @@ include 'includes/header.php';
 
 <?php include 'includes/footer.php'; ?>
 
-// Update: Hero sectie tekst aangepast
+

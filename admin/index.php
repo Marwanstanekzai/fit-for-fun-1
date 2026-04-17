@@ -136,4 +136,4 @@ try {
 
 <?php include '../includes/footer.php'; ?>
 
-// Debug: Statistieken weergave gecontroleerd
+
