@@ -180,4 +180,4 @@ if (isset($_GET['bewerk'])) {
 
 <?php include '../includes/footer.php'; ?>
 
-// CRUD: Lessenbeheer voor medewerkers
+

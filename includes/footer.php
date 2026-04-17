@@ -62,4 +62,4 @@
 </body>
 </html>
 
-// Toegevoegd: Bedrijfsinformatie in footer
+

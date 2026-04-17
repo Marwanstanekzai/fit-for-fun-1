@@ -12,6 +12,6 @@ try {
 }
 ?>
 
-// Config: PDO error mode ingesteld
 
-// Config: PDO error mode ingesteld
+
+
