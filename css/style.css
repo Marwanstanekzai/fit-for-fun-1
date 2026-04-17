@@ -1,0 +1,788 @@
+/* Fit for Fun - Global Styles */
+
+/* RESET: Zorgt ervoor dat alle standaard browser marges weg zijn */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Achtergrond met plaatje voor het hele dashboard */
+body {
+    background: url('/img/background.png') no-repeat center fixed;
+    background-size: cover;
+    background-color: #333;
+}
+
+/* NAVBAR: Opmaak voor de navigatiebalk bovenaan */
+.navbar {
+    background: #dcdcdc;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    gap: 10px;
+    overflow: visible;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 38px;
+}
+
+/* NAV LINKS: Hoe de linkjes in de navigatie eruit zien */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Beetje meer ruimte tussen de links */
+    font-size: 14px;
+    font-weight: 600;
+    flex: 1;
+    justify-content: flex-start; /* Naar links verschoven */
+    flex-wrap: nowrap;
+    margin-left: 40px; /* Ruimte vanaf het logo */
+}
+
+.nav-links > a {
+    text-decoration: none;
+    color: #111;
+    white-space: nowrap;
+    padding: 6px 10px;
+    border-radius: 3px;
+    transition: background 0.15s;
+}
+
+.nav-links > a:hover {
+    background: rgba(0,0,0,0.08);
+}
+
+/* Dropdown menu voor Beheren - Microsoft stijl */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: background 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+}
+
+.dropdown-toggle:hover {
+    background: rgba(0,0,0,0.06);
+}
+
+.dropdown.open .dropdown-toggle {
+    background: rgba(0,0,0,0.06);
+    outline: 1px dashed #aaa;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    background: #f2f2f2;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    list-style: none !important;
+    min-width: 200px;
+    z-index: 9999;
+    padding: 8px 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    list-style: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #222;
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
+    transition: background 0.15s;
+}
+
+.dropdown-menu li a:hover {
+    background: #e0e0e0;
+    color: #000;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: none; /* Alleen via klik */
+}
+
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.user-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding-left: 10px;
+    margin-left: auto; /* Zorgt dat de inlog knop en naam rechts blijven staan */
+}
+
+.user-nav span {
+    font-size: 13px;
+    color: #444;
+    white-space: nowrap;
+}
+
+/* Compacte login/uitlog knop */
+.login-btn {
+    height: 35px !important;
+    padding: 0 15px !important;
+    font-size: 13px !important;
+    white-space: nowrap;
+    margin-left: auto; /* Loginknop als je niet ingelogd bent, ook naar rechts */
+}
+
+
+/* BUTTON STYLE: Een stoere oranje knop met een 3D effect */
+.button, .login-btn, .modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 40px;
+    padding: 0 20px;
+    background-color: #ff8c00;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 3px 0 #1e88c9;
+    font-weight: 800;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.15s ease-in-out;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.button:hover, .login-btn:hover, .modal-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 #1e88c9;
+}
+
+.button:active, .login-btn:active, .modal-btn:active {
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+/* HAMBURGER BTN: Alleen zichtbaar op mobiel */
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #000;
+}
+
+.container {
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    min-height: calc(100vh - 55px);
+}
+
+h1 {
+    color: #1F3864;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Meldingen */
+.succes {
+    background: #d4edda;
+    color: #155724;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+.fout {
+    background: #ffe0e0;
+    color: #c0392b;
+    padding: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+}
+
+/* Formulieren */
+form.toevoeg-form {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 2px solid #000;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: flex-end;
+}
+
+form.toevoeg-form input, form.toevoeg-form select {
+    padding: 7px;
+    border: 1px solid #ddd;
+    font-size: 13px;
+}
+
+form.toevoeg-form label {
+    display: block;
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 2px;
+    font-weight: bold;
+}
+
+/* Tabellen */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #000;
+}
+
+th {
+    background: #1F3864;
+    color: white;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #000;
+    font-size: 13px;
+}
+
+td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 13px;
+}
+
+tr:hover {
+    background: #f5f9ff;
+}
+
+/* Dashboard Cards (admin index) */
+.kaarten {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.kaart {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 2px solid #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.kaart h2 {
+    font-size: 32px;
+    color: #ff8c00;
+    margin: 0;
+    text-shadow: 1px 1px 0 #000;
+}
+
+.kaart p {
+    color: #555;
+    margin: 2px 0 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.menu-links {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Knoppen specifiek */
+.btn-bewerk {
+    background: #2E75B6;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.btn-verwijder {
+    background: #c0392b;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+
+.terug {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #1F3864;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.terug:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .navbar {
+        height: 70px;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .nav-left {
+        width: auto;
+        gap: 15px;
+    }
+    .nav-left .logo {
+        height: 45px;
+    }
+    .search-bar {
+        display: none; /* Verberg zoekbalk op hele kleine schermen in de navbar */
+    }
+    .hamburger-btn {
+        display: block;
+    }
+/* Mobiel Overlay Menu (Premium Glassmorphism) */
+body.no-scroll {
+    overflow: hidden;
+}
+
+.nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(220, 220, 220, 0.98);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    gap: 20px;
+    z-index: 2000;
+    text-align: center;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+.nav-links a {
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1F3864;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff8c00;
+}
+
+.admin-nav, .user-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 70%;
+    padding: 15px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.admin-nav a {
+    font-size: 14px !important;
+}
+
+.user-nav span {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+.hamburger-btn {
+    display: block;
+    position: relative;
+    z-index: 2500;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+
+
+
+    .container {
+        padding: 20px;
+    }
+    form.toevoeg-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    form.toevoeg-form div {
+        width: 100%;
+    }
+    form.toevoeg-form input, form.toevoeg-form select {
+        width: 100%;
+    }
+    form.toevoeg-form .button {
+        width: 100%;
+    }
+
+    /* Tabel omzetten naar blokjes (cards) */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 2px solid #000;
+        margin-bottom: 15px;
+        background: #fff;
+        padding: 10px;
+    }
+    td {
+        border: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        min-height: 35px;
+        border-bottom: 1px solid #eee;
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+    td:before {
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        color: #1F3864;
+        content: attr(data-label);
+    }
+
+    /* Dashboard Index Cards */
+    .kaart {
+        min-width: 100%;
+    }
+    .menu-links .button {
+        width: 100%;
+    }
+}
+
+/* Lessen Informatie Pagina (Grid) */
+.lessen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.les-kaart {
+    background: #fff;
+    padding: 15px;
+    border: 2px solid #000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.les-kaart:hover {
+    transform: translateY(-5px);
+}
+
+.les-kaart h3 {
+    color: #ff8c00;
+    margin-bottom: 8px;
+    font-size: 18px;
+    text-shadow: 0.5px 0.5px 0 #000;
+}
+
+.les-kaart p {
+    margin: 4px 0;
+    font-size: 13px;
+    color: #333;
+}
+
+.les-kaart p strong {
+    color: #1F3864;
+}
+
+@media (max-width: 768px) {
+    .lessen-grid {
+        grid-template-columns: 100%;
+    }
+}
+
+/* Filter Sectie (voor Informatie pagina) */
+.filter-sectie {
+    background: #f1f1f1;
+    padding: 20px;
+    border: 2px solid #000;
+    margin-bottom: 30px;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-end;
+}
+
+.filter-groep {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-groep label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #1F3864;
+}
+
+.filter-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .filter-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Homepagina Hero Section */
+.hero {
+    background: linear-gradient(rgba(31, 56, 100, 0.8), rgba(31, 56, 100, 0.8)), url('/img/background.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 40px;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    color: #ff8c00;
+    font-size: 50px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Homepagina Layout & Components */
+.home-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.home-info h2 {
+    color: #1F3864;
+    font-size: 32px;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.home-info h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background: #ff8c00;
+}
+
+.home-info > p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 25px 20px;
+    background: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0 rgba(30, 136, 201, 0.2); 
+    transition: all 0.2s ease-in-out;
+}
+
+.feature-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 4px 6px 0 rgba(255, 140, 0, 0.5);
+    border-color: #ff8c00;
+}
+
+.feature-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 17px;
+    color: #1F3864;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.feature-item p {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Promo Kaart */
+.promo-card {
+    background: #1F3864;
+    color: white;
+    padding: 25px;
+    border: 3px solid #ff8c00;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.promo-card h3 {
+    color: #ff8c00;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.promo-card p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .hero { padding: 60px 20px; }
+    .hero h1 { font-size: 32px; }
+    .home-grid { grid-template-columns: 100%; }
+}
+
+/* Dashboard Overzichten */
+.overzichten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.overzicht-kaart {
+    background: #f9f9f9;
+    border: 2px solid #000;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.overzicht-kaart h2 {
+    font-size: 15px;
+    color: #1F3864;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ff8c00;
+}
+
+.overzicht-kaart table {
+    box-shadow: none;
+    border: 1px solid #ddd;
+}
+
+.overzicht-kaart th {
+    font-size: 12px;
+    padding: 7px 10px;
+}
+
+.overzicht-kaart td {
+    font-size: 12px;
+    padding: 6px 10px;
+}
+
+@media (max-width: 768px) {
+    .overzichten { grid-template-columns: 1fr; }
+}
